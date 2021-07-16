@@ -25,4 +25,13 @@ let playerSelection = playerInput();
 console.log(playerSelection);
 
 //Create a function playRound that takes in computerSelection and playerSelection and determines a winner
+function playRound(computerSelection, playerSelection) {
+    if (computerSelection == playerSelection) {
+        return "It's a tie";
+    } else {
+        return "It's not a tie";
+    }
+}
+alert(playRound(computerSelection, playerSelection))
+
 //Create a function game which repeats playRound 5 times
