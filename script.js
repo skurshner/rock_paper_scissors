@@ -26,10 +26,16 @@ console.log(playerSelection);
 
 //Create a function playRound that takes in computerSelection and playerSelection and determines a winner
 function playRound(computerSelection, playerSelection) {
-    if (computerSelection == playerSelection) {
+    if (computerSelection === playerSelection) {
         return "It's a tie";
     } else {
-        return "It's not a tie";
+        if (computerSelection === "Rock" && playerSelection === "Scissors" ||
+            computerSelection === "Paper" && playerSelection === "Rock" ||
+            computerSelection === "Scissors" && playerSelection === "Paper") {
+                return `You lost, ${ computerSelection } beats ${ playerSelection}.`;
+            } else {
+                return `You won, ${ playerSelection } beats ${ computerSelection}.`;
+            }
     }
 }
 alert(playRound(computerSelection, playerSelection))
