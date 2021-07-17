@@ -10,34 +10,130 @@ function computerInput() {
     }
 }
 
-//Assign variable computerSelection to output of computerInput
-let computerSelection = computerInput();
-console.log(computerSelection);
-
 //Create a function playerInput that gets the input from the user through a prompt & converts to title case
 function playerInput() {
     let input = prompt("What is your move?").toLowerCase();
     return (input[0].toUpperCase()) + input.slice(1);   
 }
 
-//Assign variable playerSelection to output of playerInput
-let playerSelection = playerInput();
-console.log(playerSelection);
+//Assign variables for counting the score
+let computerScore = 0;
+let playerScore = 0;
 
-//Create a function playRound that takes in computerSelection and playerSelection and determines a winner
-function playRound(computerSelection, playerSelection) {
-    if (computerSelection === playerSelection) {
-        return "It's a tie";
+//Create a function playRound(x6=5) that takes in computerSelection and playerSelection and determines a winner for each of the 5 games.
+function playRound1() {
+    let computerSelection1 = computerInput();
+    //console.log(computerSelection1);
+    let playerSelection1 = playerInput();
+    
+    if (computerSelection1 === playerSelection1) {
+        alert("It's a tie");
     } else {
-        if (computerSelection === "Rock" && playerSelection === "Scissors" ||
-            computerSelection === "Paper" && playerSelection === "Rock" ||
-            computerSelection === "Scissors" && playerSelection === "Paper") {
-                return `You lost, ${ computerSelection } beats ${ playerSelection}.`;
+        if (computerSelection1 === "Rock" && playerSelection1 === "Scissors" ||
+            computerSelection1 === "Paper" && playerSelection1 === "Rock" ||
+            computerSelection1 === "Scissors" && playerSelection1 === "Paper") {
+                ++computerScore;
+                alert(`You lost, ${ computerSelection1 } beats ${ playerSelection1 }. You: ${ playerScore }, Computer: ${ computerScore }`);
             } else {
-                return `You won, ${ playerSelection } beats ${ computerSelection}.`;
+                ++playerScore;
+                alert(`You won, ${ playerSelection1 } beats ${ computerSelection1 }. You: ${ playerScore }, Computer: ${ computerScore }`);
             }
     }
 }
-alert(playRound(computerSelection, playerSelection))
 
-//Create a function game which repeats playRound 5 times
+function playRound2() {
+    let computerSelection2 = computerInput();
+    //console.log(computerSelection2);
+    let playerSelection2 = playerInput();
+    
+    if (computerSelection2 === playerSelection2) {
+        alert("It's a tie");
+    } else {
+        if (computerSelection2 === "Rock" && playerSelection2 === "Scissors" ||
+            computerSelection2 === "Paper" && playerSelection2 === "Rock" ||
+            computerSelection2 === "Scissors" && playerSelection2 === "Paper") {
+                ++computerScore;
+                alert(`You lost, ${ computerSelection2 } beats ${ playerSelection2 }. You: ${ playerScore }, Computer: ${ computerScore }`);
+            } else {
+                ++playerScore;
+                alert(`You won, ${ playerSelection2 } beats ${ computerSelection2 }. You: ${ playerScore }, Computer: ${ computerScore }`);
+            }
+    }
+}
+
+function playRound3() {
+    let computerSelection3 = computerInput();
+    //console.log(computerSelection3);
+    let playerSelection3 = playerInput();
+    
+    if (computerSelection3 === playerSelection3) {
+        alert("It's a tie");
+    } else {
+        if (computerSelection3 === "Rock" && playerSelection3 === "Scissors" ||
+            computerSelection3 === "Paper" && playerSelection3 === "Rock" ||
+            computerSelection3 === "Scissors" && playerSelection3 === "Paper") {
+                ++computerScore;
+                alert(`You lost, ${ computerSelection3 } beats ${ playerSelection3 }. You: ${ playerScore }, Computer: ${ computerScore }`);
+            } else {
+                ++playerScore;
+                alert(`You won, ${ playerSelection3 } beats ${ computerSelection3 }. You: ${ playerScore }, Computer: ${ computerScore }`);
+            }
+    }
+}
+
+function playRound4() {
+    let computerSelection4 = computerInput();
+    //console.log(computerSelection4);
+    let playerSelection4 = playerInput();
+    
+    if (computerSelection4 === playerSelection4) {
+        alert("It's a tie");
+    } else {
+        if (computerSelection4 === "Rock" && playerSelection4 === "Scissors" ||
+            computerSelection4 === "Paper" && playerSelection4 === "Rock" ||
+            computerSelection4 === "Scissors" && playerSelection4 === "Paper") {
+                ++computerScore;
+                alert(`You lost, ${ computerSelection4 } beats ${ playerSelection4 }. You: ${ playerScore }, Computer: ${ computerScore }`);
+            } else {
+                ++playerScore;
+                alert(`You won, ${ playerSelection4 } beats ${ computerSelection4 }. You: ${ playerScore }, Computer: ${ computerScore }`);
+            }
+    }
+}
+
+function playRound5() {
+    let computerSelection5 = computerInput();
+    //console.log(computerSelection5);
+    let playerSelection5 = playerInput();
+    
+    if (computerSelection5 === playerSelection5) {
+        alert("It's a tie");
+    } else {
+        if (computerSelection5 === "Rock" && playerSelection5 === "Scissors" ||
+            computerSelection5 === "Paper" && playerSelection5 === "Rock" ||
+            computerSelection5 === "Scissors" && playerSelection5 === "Paper") {
+                ++computerScore;
+                alert(`You lost, ${ computerSelection5 } beats ${ playerSelection5 }. You: ${ playerScore }, Computer: ${ computerScore }`);
+            } else {
+                ++playerScore;
+                alert(`You won, ${ playerSelection5 } beats ${ computerSelection5 }. You: ${ playerScore }, Computer: ${ computerScore }`);
+            }
+    }
+}
+//Create a function game which plays the five rounds
+function game () {
+    playRound1();
+    playRound2();
+    playRound3();
+    playRound4();
+    playRound5();
+
+    if (computerScore === playerScore) {
+        alert("It's a tie!")
+    }   else {
+        (computerScore > playerScore) ? alert(`You Lost! ${ computerScore } to ${ playerScore }.`) : 
+        alert(`You Won! ${ playerScore } to ${ computerScore }.`);
+    }
+}
+
+game();
