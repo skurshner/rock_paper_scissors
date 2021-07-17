@@ -1,0 +1,1 @@
+This is a working, but kinda jenky version of Rock, Paper, Scissors you can play in the browser. It is my first ever program. I didn't use any loops, because I haven't really learned them yet. Once I do, I'm sure I could write this again in much less code. However, I'm pretty proud of myself for figuring this out with no outside help. 
