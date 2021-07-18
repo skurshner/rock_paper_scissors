@@ -1,5 +1,5 @@
-//Create a function computerInput that randomly returns "Rock", "Paper", or "Scissors"
-function computerInput() {
+//Create a function computerPlay that randomly returns "Rock", "Paper", or "Scissors"
+function computerPlay() {
     let number = Math.random();
     if (number <= 0.33) {
         return "Rock";
@@ -10,8 +10,8 @@ function computerInput() {
     }
 }
 
-//Create a function playerInput that gets the input from the user through a prompt & converts to title case
-function playerInput() {
+//Create a function playerPlay that gets the input from the user through a prompt & converts to title case
+function playerPlay() {
     let input = prompt("What is your move ... Rock, Paper or Scissors?").toLowerCase();
     return (input[0].toUpperCase()) + input.slice(1);     
 }
@@ -26,9 +26,9 @@ let playerSelection;
 
 //Create a function playRound that takes in computerSelection and playerSelection and determines a winner for each of the 5 games.
 function playRound() {
-    computerSelection = computerInput();
+    computerSelection = computerPlay();
     console.log(computerSelection);
-    playerSelection = playerInput();
+    playerSelection = playerPlay();
     
     if (computerSelection === playerSelection) {
         alert("It's a tie.");
