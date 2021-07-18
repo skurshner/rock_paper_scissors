@@ -24,7 +24,7 @@ let playerScore = 0;
 let computerSelection;
 let playerSelection;
 
-//Create a function playRound that takes in computerSelection and playerSelection and determines a winner for each of the 5 games.
+//Create a function playRound that takes in computerSelection and playerSelection and determines a winner and sets the game score
 function playRound() {
     computerSelection = computerPlay();
     console.log(computerSelection);
