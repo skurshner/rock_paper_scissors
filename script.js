@@ -47,11 +47,11 @@ function playRound() {
 
 //Create a function game which plays the five rounds
 function game () {
-    let roundOne = playRound();
-    let roundTwo = playRound();
-    let roundThree = playRound();
-    let roundFour = playRound();
-    let roundFive = playRound();
+    const roundOne = playRound();
+    const roundTwo = playRound();
+    const roundThree = playRound();
+    const roundFour = playRound();
+    const roundFive = playRound();
     
     if (computerScore === playerScore) {
         alert("Game ended in a tie. Refresh and try again.")
