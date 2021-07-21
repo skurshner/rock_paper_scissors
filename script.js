@@ -9,26 +9,36 @@ function computerPlay() {
         return "Scissors";
     }
 }
+//Assign and initialize variables for computer and player selection
+let computerSelection;
+let playerSelection;
 
-//Create a function playerPlay that gets the input from the user through a prompt & converts to title case
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        playerSelection = (button.id[0].toUpperCase()) + button.id.slice(1); 
+        console.log(playerSelection);
+        playRound();
+    })
+})
+
+/*Create a function playerPlay that gets the input from the user through a prompt & converts to title case
 function playerPlay() {
     let input = prompt("What is your move ... Rock, Paper or Scissors?").toLowerCase();
     return (input[0].toUpperCase()) + input.slice(1);     
-}
+}*/
 
 //Assign and initialize variables for counting the score
 let computerScore = 0;
 let playerScore = 0;
 
-//Assign and initialize variables for computer and player selection
-let computerSelection;
-let playerSelection;
-
 //Create a function playRound that takes in computerSelection and playerSelection and determines a winner and sets the game score
 function playRound() {
     computerSelection = computerPlay();
     console.log(computerSelection);
-    playerSelection = playerPlay();
+    //playerSelection = playerPlay();
     
     if (computerSelection === playerSelection) {
         alert("It's a tie.");
@@ -45,7 +55,7 @@ function playRound() {
     }
 }
 
-//Create a function game which plays the five rounds
+/*Create a function game which plays the five rounds
 function game () {
     const roundOne = playRound();
     const roundTwo = playRound();
@@ -61,4 +71,4 @@ function game () {
     }
 }
 
-game();
+game();*/
