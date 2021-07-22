@@ -1,4 +1,4 @@
-// Create a function computerPlay that randomly returns "Rock", "Paper", or "Scissors"
+// Computer randomly return "Rock", "Paper", or "Scissors"
 function computerPlay() {
     let number = Math.random();
     if (number <= 0.33) {
@@ -14,9 +14,9 @@ let computerSelection;
 let playerSelection;
 
 // Button click event assigns player's move and calls playRound()
-const buttons = document.querySelectorAll('button');
+const playerChoice = document.querySelectorAll('button');
 
-buttons.forEach((button) => {
+playerChoice.forEach((button) => {
     button.addEventListener('click', () => {
         playerSelection = (button.id[0].toUpperCase()) + button.id.slice(1); 
         //console.log(playerSelection);
@@ -32,30 +32,43 @@ let playerScore = 0;
 let computerCount = document.querySelector('#computerscore');
 let playerCount = document.querySelector('#playerscore');
 
-// Target outcome
+// Target outcome of each round and game winner
 let outcome = document.querySelector('#outcome');
+let winner = document.querySelector('#winner');
+let reload = document.querySelector('#reload');
+
+// Target buttons 
+let buttons = document.querySelector('#buttons');
 
 // When either score reaches 5, hide buttons and announce winner
 function checkWinner() {
     if (playerScore === 5 || computerScore === 5) {
-        console.log("there is a winner");
+        buttons.classList.add("hidden");
+        winner.classList.remove("hidden")
+        reload.classList.remove("hidden");
+
+        if (playerScore === 5){
+            winner.textContent = 'Congrats, you won!'
+        } else {
+            winner.textContent = 'Sorry, you lost!'
+        }
     }
 }
 
-// Create a function playRound that takes in computerSelection and playerSelection and determines a winner and sets the game score
+// Take in computerSelection and playerSelection. Determine a winner and set the game score
 function playRound() {
     computerSelection = computerPlay();
     //console.log(computerSelection);
     
     if (computerSelection === playerSelection) {
-        outcome.textContent = "It's a tie.";
+        outcome.textContent = "It's a tie";
     } else {
         if (computerSelection === "Rock" && playerSelection === "Scissors" ||
             computerSelection === "Paper" && playerSelection === "Rock" ||
             computerSelection === "Scissors" && playerSelection === "Paper") {
                 ++computerScore;
                 computerCount.textContent = computerScore;
-                outcome.textContent = `You lost this round. ${ computerSelection } beats ${ playerSelection }`;
+                outcome.textContent = `You lost this round ... ${ computerSelection } beats ${ playerSelection }`;
             } else {
                 ++playerScore;
                 playerCount.textContent = playerScore;
